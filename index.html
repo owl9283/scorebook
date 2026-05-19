@@ -1018,93 +1018,88 @@ body {
     <!-- テスト選択 -->
     <div class="quiz-select-wrap">
       <div class="sec">テストを選ぶ</div>
-      <label class="tap" for="q-field">
+      <label class="tap" for="q-field" onclick="initQuiz('field')">
         <div class="row">
           <div class="ico" style="background:var(--green-l)">🏟️</div>
-          <div><div class="ttl">守備位置テスト</div><div class="sub-t">ポジション番号と名称 — 全9問</div></div>
+          <div><div class="ttl">守備位置テスト</div><div class="sub-t">ポジション番号と名称 — 全25問</div></div>
         </div>
       </label>
-      <label class="tap" for="q-symbols">
+      <label class="tap" for="q-symbols" onclick="initQuiz('symbols')">
         <div class="row">
           <div class="ico" style="background:var(--amber-l)">📝</div>
-          <div><div class="ttl">記号・略語テスト</div><div class="sub-t">スコア記号の意味 — 全10問</div></div>
+          <div><div class="ttl">記号・略語テスト</div><div class="sub-t">スコア記号の意味 — 全25問</div></div>
         </div>
       </label>
-      <label class="tap" for="q-rules">
+      <label class="tap" for="q-rules" onclick="initQuiz('rules')">
         <div class="row">
           <div class="ico" style="background:var(--blue-l)">⚖️</div>
-          <div><div class="ttl">野球ルールテスト</div><div class="sub-t">基本ルール確認 — 全8問</div></div>
+          <div><div class="ttl">野球ルールテスト</div><div class="sub-t">基本ルール確認 — 全25問</div></div>
         </div>
       </label>
       <div class="card" style="background:var(--amber-l);border:none;box-shadow:none;margin-top:6px">
         <p style="font-size:12px;color:var(--amber-d);line-height:1.7">
-          💡 テストを選ぶと問題が表示されます。各問題の答えをタップして選んでください。テスト終了後は「記録」タブで結果を確認できます（テスト結果はブラウザで開いた場合のみ保存されます）。
+          💡 テストを選んで全問答えてから「答え合わせ」ボタンを押してください。何問正解できるか挑戦しよう！
         </p>
       </div>
     </div>
 
-    <!-- 守備位置テスト問題 -->
+    <!-- 守備位置テスト -->
     <div class="quiz-q-wrap qw-field">
-      <label class="bk-label" for="q-none">
+      <label class="bk-label" for="q-none" onclick="resetQuiz('field')">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
         テスト選択に戻る
       </label>
-      <div style="font-size:15px;font-weight:700;margin-bottom:12px">🏟️ 守備位置テスト</div>
-      <!-- Q1 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q1. 投手の守備番号は何番ですか？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">① 1番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">② 2番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 4番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 6番</label></div></div>
-      <!-- Q2 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q2. 捕手（キャッチャー）の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 1番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 2番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 3番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 5番</label></div></div>
-      <!-- Q3 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q3. 一塁手の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 2番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 3番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 4番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 5番</label></div></div>
-      <!-- Q4 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q4. 二塁手の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 3番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 4番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 5番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 6番</label></div></div>
-      <!-- Q5 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q5. 三塁手の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 4番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 5番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 6番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 7番</label></div></div>
-      <!-- Q6 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q6. 遊撃手（ショート）の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 5番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 6番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 7番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 8番</label></div></div>
-      <!-- Q7 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q7. 左翼手（レフト）の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 6番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 7番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 8番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 9番</label></div></div>
-      <!-- Q8 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q8. 中堅手（センター）の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 7番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">② 8番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">③ 9番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 1番</label></div></div>
-      <!-- Q9 -->
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q9. 右翼手（ライト）の守備番号は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">① 7番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">② 8番</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600;cursor:pointer">③ 9番 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px;cursor:default">④ 1番</label></div></div>
-      <div class="card" style="background:var(--green-l);text-align:center;padding:20px"><div style="font-size:36px;margin-bottom:6px">🏆</div><div style="font-size:16px;font-weight:700;color:var(--green-dd)">守備位置テスト 完了！</div><p style="font-size:12px;color:var(--green-dd);margin-top:6px">全9問の正解を確認しました。</p></div>
-      <label class="btn" for="q-none">← テスト選択に戻る</label>
+      <div style="font-size:15px;font-weight:700;margin-bottom:4px">🏟️ 守備位置テスト</div>
+      <div id="prog-field" style="font-size:12px;color:var(--text2);margin-bottom:12px">0 / 25 問 回答済み</div>
+      <div id="qs-field"></div>
+      <button id="btn-field" class="btn" style="background:var(--gray-l);color:var(--gray-d);margin-top:4px;cursor:not-allowed" disabled onclick="markQuiz('field')">
+        全問回答してから答え合わせ ✅
+      </button>
+      <div id="result-field" style="display:none"></div>
+      <label class="bk-label" for="q-none" onclick="resetQuiz('field')" style="margin-top:12px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        テスト選択に戻る
+      </label>
     </div>
 
-    <!-- 記号・略語テスト問題 -->
+    <!-- 記号・略語テスト -->
     <div class="quiz-q-wrap qw-symbols">
-      <label class="bk-label" for="q-none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg> テスト選択に戻る</label>
-      <div style="font-size:15px;font-weight:700;margin-bottom:12px">📝 記号・略語テスト</div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q1. 「K」はどんなプレーを表しますか？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 三振 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 本塁打</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ エラー</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q2. 「BB」が表す意味は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 三振</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 本塁打</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 四球 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 暴投</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q3. 「HR」が表す意味は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 三振</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② ヒット</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 本塁打 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 犠牲フライ</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q4. 「E」はどの意味ですか？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 失策（エラー） ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 得点</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 暴投</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q5. 「SB」が表すプレーは？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 犠牲バント</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 盗塁 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 単打</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q6. 「SF」はどんなプレーですか？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">① 犠牲フライ ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 三振</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 盗塁刺</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q7. 「2B」が表す意味は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 本塁打</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 単打</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 二塁打 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 二塁手</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q8. 「WP」が表すプレーは？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">① 暴投 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 三振</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ ワイルドカード</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q9. 「HBP」はどんなプレー？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 本塁打</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 死球 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 四球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 盗塁</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q10. 「DP」が意味するプレーは？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① ダブルヘッダー</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② ダブルプレー（併殺） ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 死球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 暴投</label></div></div>
-      <div class="card" style="background:var(--green-l);text-align:center;padding:20px"><div style="font-size:36px;margin-bottom:6px">⚾</div><div style="font-size:16px;font-weight:700;color:var(--green-dd)">記号テスト 完了！</div><p style="font-size:12px;color:var(--green-dd);margin-top:6px">全10問の正解を確認しました。</p></div>
-      <label class="btn" for="q-none">← テスト選択に戻る</label>
+      <label class="bk-label" for="q-none" onclick="resetQuiz('symbols')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        テスト選択に戻る
+      </label>
+      <div style="font-size:15px;font-weight:700;margin-bottom:4px">📝 記号・略語テスト</div>
+      <div id="prog-symbols" style="font-size:12px;color:var(--text2);margin-bottom:12px">0 / 25 問 回答済み</div>
+      <div id="qs-symbols"></div>
+      <button id="btn-symbols" class="btn" style="background:var(--gray-l);color:var(--gray-d);margin-top:4px;cursor:not-allowed" disabled onclick="markQuiz('symbols')">
+        全問回答してから答え合わせ ✅
+      </button>
+      <div id="result-symbols" style="display:none"></div>
+      <label class="bk-label" for="q-none" onclick="resetQuiz('symbols')" style="margin-top:12px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        テスト選択に戻る
+      </label>
     </div>
 
-    <!-- 野球ルールテスト問題 -->
+    <!-- 野球ルールテスト -->
     <div class="quiz-q-wrap qw-rules">
-      <label class="bk-label" for="q-none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg> テスト選択に戻る</label>
-      <div style="font-size:15px;font-weight:700;margin-bottom:12px">⚖️ 野球ルールテスト</div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q1. 野球で1イニングに取れるアウト数は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 1</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 2</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 3 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 4</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q2. 正規の試合の回数は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 7回</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 8回</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 9回 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 10回</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q3. 4ボールで打者が出塁するのは？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 死球</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 四球 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 三振</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ エラー</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q4. 満塁のことを英語で何という？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① Full count</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② Bases loaded ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ Grand slam</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ Hit and run</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q5. バントで打者が出塁した場合の記録は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">① 安打 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 犠牲バント</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 野手選択</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ エラー</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q6. インフィールドフライが宣告されるのは？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 走者なし</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 走者一塁のみ</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">③ 走者一・二塁または満塁 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 走者三塁のみ</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q7. ボークを犯した投手の結果は？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">① 打者がアウト</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">② 走者が1つ進塁 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 走者がアウト</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 打者に四球</label></div></div>
-      <div class="card"><p style="font-weight:600;margin-bottom:10px;font-size:14px">Q8. 打順を間違えて打席に立つのを何という？</p><div style="display:grid;gap:6px"><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--green);background:var(--green-l);color:var(--green-dd);font-weight:600">① 打順違反 ✓ 正解！</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">② 打撃妨害</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">③ 走塁妨害</label><label style="display:block;padding:11px 13px;border-radius:var(--r);border:0.5px solid var(--border);background:var(--surface);font-size:13px">④ 守備妨害</label></div></div>
-      <div class="card" style="background:var(--green-l);text-align:center;padding:20px"><div style="font-size:36px;margin-bottom:6px">🏆</div><div style="font-size:16px;font-weight:700;color:var(--green-dd)">ルールテスト 完了！</div><p style="font-size:12px;color:var(--green-dd);margin-top:6px">全8問の正解を確認しました。</p></div>
-      <label class="btn" for="q-none">← テスト選択に戻る</label>
+      <label class="bk-label" for="q-none" onclick="resetQuiz('rules')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        テスト選択に戻る
+      </label>
+      <div style="font-size:15px;font-weight:700;margin-bottom:4px">⚖️ 野球ルールテスト</div>
+      <div id="prog-rules" style="font-size:12px;color:var(--text2);margin-bottom:12px">0 / 25 問 回答済み</div>
+      <div id="qs-rules"></div>
+      <button id="btn-rules" class="btn" style="background:var(--gray-l);color:var(--gray-d);margin-top:4px;cursor:not-allowed" disabled onclick="markQuiz('rules')">
+        全問回答してから答え合わせ ✅
+      </button>
+      <div id="result-rules" style="display:none"></div>
+      <label class="bk-label" for="q-none" onclick="resetQuiz('rules')" style="margin-top:12px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        テスト選択に戻る
+      </label>
     </div>
+
   </div><!-- /quiz-content -->
 </div><!-- /screen-quiz -->
 
@@ -1163,8 +1158,292 @@ body {
 </div><!-- /wrap -->
 
 <script>
-// JavaScriptはブラウザで開いた場合のみ動作する補助機能
-// タブ切り替えはCSSのradioボタンで動作するためJSなしでも使用可能
+// ─── テスト問題データ ───
+var QUIZ = {
+  field: {
+    title: '守備位置テスト',
+    qs: [
+      {q:'投手の守備番号は何番ですか？',                    opts:['1番','2番','4番','6番'],         ans:0},
+      {q:'捕手（キャッチャー）の守備番号は？',              opts:['1番','2番','3番','5番'],         ans:1},
+      {q:'一塁手の守備番号は？',                            opts:['2番','3番','4番','5番'],         ans:1},
+      {q:'二塁手の守備番号は？',                            opts:['3番','4番','5番','6番'],         ans:1},
+      {q:'三塁手の守備番号は？',                            opts:['4番','5番','6番','7番'],         ans:1},
+      {q:'遊撃手（ショート）の守備番号は？',                opts:['5番','6番','7番','8番'],         ans:1},
+      {q:'左翼手（レフト）の守備番号は？',                  opts:['6番','7番','8番','9番'],         ans:1},
+      {q:'中堅手（センター）の守備番号は？',                opts:['7番','8番','9番','1番'],         ans:1},
+      {q:'右翼手（ライト）の守備番号は？',                  opts:['7番','8番','9番','1番'],         ans:2},
+      {q:'守備番号「5番」は何というポジション？',           opts:['遊撃手','二塁手','三塁手','一塁手'],   ans:2},
+      {q:'守備番号「8番」は何というポジション？',           opts:['左翼手','中堅手','右翼手','捕手'],     ans:1},
+      {q:'守備番号「9番」は何というポジション？',           opts:['左翼手','中堅手','右翼手','投手'],     ans:2},
+      {q:'守備番号「3番」は何というポジション？',           opts:['二塁手','三塁手','一塁手','遊撃手'],   ans:2},
+      {q:'守備番号「4番」は何というポジション？',           opts:['一塁手','二塁手','三塁手','投手'],     ans:1},
+      {q:'守備番号「2番」は何というポジション？',           opts:['投手','捕手','一塁手','二塁手'],       ans:1},
+      {q:'投手（P）の守備番号は？',                         opts:['1番','2番','3番','4番'],         ans:0},
+      {q:'すべて外野手の守備番号の組み合わせはどれ？',        opts:['1・2・3番','4・5・6番','7・8・9番','2・5・8番'], ans:2},
+      {q:'すべて内野手の守備番号の組み合わせはどれ？',        opts:['7・8・9番','1・4・7番','3・4・5・6番','2・6・9番'], ans:2},
+      {q:'「SS」と略されるポジションは？',                  opts:['三塁手','遊撃手','二塁手','捕手'],     ans:1},
+      {q:'「CF」と略されるポジションは？',                  opts:['左翼手','右翼手','中堅手','捕手'],     ans:2},
+      {q:'「LF」と略されるポジションは？',                  opts:['左翼手','中堅手','右翼手','遊撃手'],   ans:0},
+      {q:'「RF」と略されるポジションは？',                  opts:['左翼手','中堅手','右翼手','投手'],     ans:2},
+      {q:'「C」と略されるポジションは？',                   opts:['投手','捕手','中堅手','一塁手'],       ans:1},
+      {q:'「1B」と略されるポジションは？',                  opts:['一塁手','二塁手','三塁手','投手'],     ans:0},
+      {q:'「3B」と略されるポジションは？',                  opts:['一塁手','二塁手','三塁手','捕手'],     ans:2}
+    ]
+  },
+  symbols: {
+    title: '記号・略語テスト',
+    qs: [
+      {q:'「K」はどんなプレーを表しますか？',               opts:['四球','三振','本塁打','エラー'],                       ans:1},
+      {q:'「BB」が表す意味は？',                            opts:['三振','本塁打','四球','暴投'],                         ans:2},
+      {q:'「HR」が表す意味は？',                            opts:['三振','ヒット','本塁打','犠牲フライ'],                  ans:2},
+      {q:'「E」はどの意味ですか？',                         opts:['四球','失策（エラー）','得点','暴投'],                  ans:1},
+      {q:'「SB」が表すプレーは？',                          opts:['犠牲バント','盗塁','四球','単打'],                      ans:1},
+      {q:'「SF」はどんなプレーですか？',                    opts:['犠牲フライ','三振','四球','盗塁刺'],                    ans:0},
+      {q:'「2B」が表す意味は？',                            opts:['本塁打','単打','二塁打','二塁手'],                      ans:2},
+      {q:'「WP」が表すプレーは？',                          opts:['暴投','四球','三振','ワイルドカード'],                  ans:0},
+      {q:'「HBP」はどんなプレー？',                         opts:['本塁打','死球','四球','盗塁'],                         ans:1},
+      {q:'「DP」が意味するプレーは？',                      opts:['ダブルヘッダー','ダブルプレー（併殺）','死球','暴投'],  ans:1},
+      {q:'「1B」が表す意味は？',                            opts:['本塁打','二塁打','単打','三塁打'],                      ans:2},
+      {q:'「3B」が表す意味は？',                            opts:['本塁打','三塁打','二塁打','単打'],                      ans:1},
+      {q:'「CS」が表すプレーは？',                          opts:['盗塁','盗塁刺（盗塁失敗）','犠牲フライ','暴投'],        ans:1},
+      {q:'「PB」が表すプレーは？',                          opts:['暴投','四球','捕逸','死球'],                            ans:2},
+      {q:'「FC」が表すプレーは？',                          opts:['野手選択','失策','四球','犠牲バント'],                  ans:0},
+      {q:'「GO」が表すプレーは？',                          opts:['フライアウト','三振','ゴロアウト','本塁打'],            ans:2},
+      {q:'「FO」が表すプレーは？',                          opts:['フライアウト','ゴロアウト','三振','四球'],              ans:0},
+      {q:'「SAC」が表すプレーは？',                         opts:['犠牲フライ','盗塁','犠牲バント','四球'],                ans:2},
+      {q:'「6-3」はどんなプレーですか？',                   opts:['ショートゴロ→一塁送球アウト','セカンドゴロ→一塁送球アウト','サードゴロ→一塁送球アウト','エラー'], ans:0},
+      {q:'「F8」はどんなプレーですか？',                    opts:['レフトフライ','センターフライ','ライトフライ','センターゴロ'], ans:1},
+      {q:'見逃し三振の記号は？',                            opts:['振K','K','GO','FO'],                                   ans:1},
+      {q:'空振り三振の記号は？',                            opts:['K','振K','BB','HBP'],                                  ans:1},
+      {q:'「6-4-3」はどんなプレー？',                       opts:['トリプルプレー','ダブルプレー（ショート→セカンド→ファースト）','シングルプレー','エラー'], ans:1},
+      {q:'「E6」はどんなプレー？',                          opts:['ショートがエラー','セカンドがエラー','サードがエラー','ファーストがエラー'], ans:0},
+      {q:'「L4」はどんなプレーを表しますか？',              opts:['セカンドゴロ','セカンドフライ','セカンドライナー','セカンドエラー'], ans:2},
+      {q:'「5-4-3」はどんなプレー？',                       opts:['トリプルプレー','ダブルプレー（サード→セカンド→ファースト）','シングルプレー','エラー'], ans:1},
+      {q:'「F9」はどんなプレーですか？',                    opts:['レフトフライ','センターフライ','ライトフライ','ライトゴロ'],     ans:2},
+      {q:'ゴロアウトを記録するとき守備番号はどう書く？',    opts:['守備番号を「+」でつなぐ','守備番号を「-」でつなぐ','守備番号を「×」でつなぐ','守備番号だけ書く'], ans:1},
+      {q:'「E4」はどんなプレー？',                          opts:['サードがエラー','セカンドがエラー','ショートがエラー','ファーストがエラー'], ans:1},
+      {q:'「4-6-3」はどんなプレー？',                       opts:['ダブルプレー（セカンド→ショート→ファースト）','ダブルプレー（サード→セカンド→ファースト）','シングルプレー','エラー'], ans:0},
+      {q:'「W」や「WP」はどんなプレーを表す？',             opts:['四球','暴投','盗塁','エラー'],                             ans:1},
+      {q:'スコアブックで得点が入ったとき、ダイヤモンド図はどうする？', opts:['何もしない','内側を塗りつぶす','バツ印をつける','丸を書く'], ans:1}
+    ]
+  },
+  rules: {
+    title: '野球ルールテスト',
+    qs: [
+      {q:'野球で1イニングに取れるアウト数は？',                       opts:['1','2','3','4'],                                              ans:2},
+      {q:'正規の試合の回数は？',                                       opts:['7回','8回','9回','10回'],                                    ans:2},
+      {q:'4ボールで打者が出塁するのは？',                              opts:['死球','四球','三振','エラー'],                                ans:1},
+      {q:'満塁のことを英語で何という？',                               opts:['Full count','Bases loaded','Grand slam','Hit and run'],       ans:1},
+      {q:'バントで打者が出塁した場合の記録は？',                       opts:['安打','犠牲バント','野手選択','エラー'],                      ans:0},
+      {q:'インフィールドフライが宣告されるのは？',                     opts:['走者なし','走者一塁のみ','走者一・二塁または満塁','走者三塁のみ'], ans:2},
+      {q:'ボークを犯した投手の結果は？',                               opts:['打者がアウト','走者が1つ進塁','走者がアウト','打者に四球'],   ans:1},
+      {q:'打順を間違えて打席に立つのを何という？',                     opts:['打順違反','打撃妨害','走塁妨害','守備妨害'],                  ans:0},
+      {q:'1チームの守備人数は何人ですか？',                            opts:['8人','9人','10人','11人'],                                   ans:1},
+      {q:'ストライクゾーンとはどの範囲？',                             opts:['打者の頭から膝まで','打者の肩から膝の間でホームベース上','打者のベルトから足首まで','ホームベースの上すべて'], ans:1},
+      {q:'3ストライクで打者はどうなる？',                              opts:['四球','死球','三振アウト','セーフ'],                          ans:2},
+      {q:'走者がいないときにバントの打球がフェアになった場合は？',     opts:['必ずアウト','普通の打球と同じ','ファウル扱い','自動的にセーフ'], ans:1},
+      {q:'タッチアップとはどんなプレー？',                             opts:['盗塁のこと','フライアウト後に走者が進塁すること','バントのこと','走塁妨害のこと'], ans:1},
+      {q:'フォースアウトが起きるのはどんな状況？',                     opts:['走者が次の塁に進む義務があるとき','走者がベースを離れたとき','打者がバントしたとき','投手がボークしたとき'], ans:0},
+      {q:'投手が1試合で投げられる球数に公式ルール上の上限は？',        opts:['あり（年齢・カテゴリによる）','なし','100球','50球'],          ans:0},
+      {q:'ファウルボールは何ストライクになる？',                       opts:['必ず1ストライク','2ストライクまでは1ストライク、それ以降は増えない','常にノーカウント','1ボール'], ans:1},
+      {q:'内野安打とはどんなヒット？',                                 opts:['内野手がエラーした打球','内野の範囲に落ちた安打','外野まで届かなかった安打','バントで出塁したもの'], ans:1},
+      {q:'グランドスラムとは何ですか？',                               opts:['二塁打','満塁本塁打','逆転本塁打','サヨナラ本塁打'],          ans:1},
+      {q:'サヨナラゲームとはどんな試合？',                             opts:['引き分けになった試合','後攻チームが最終回に決勝点を入れて勝つ試合','大差で勝つ試合','延長戦になった試合'], ans:1},
+      {q:'盗塁が成立するのはどんなとき？',                             opts:['投球中に次の塁に進みセーフになったとき','エラーで進塁したとき','ヒットで進塁したとき','フォアボールで進塁したとき'], ans:0},
+      {q:'犠牲フライ（SF）とは？',                                     opts:['フライアウトになったが走者が生還した打球','ファウルフライ','外野フライで走者が進塁しなかった打球','フェアフライで野手がエラーした打球'], ans:0},
+      {q:'デッドボール（HBP）になったとき打者はどうなる？',            opts:['アウトになる','その場でやり直し','一塁に進む','ストライクになる'], ans:2},
+      {q:'走塁妨害とはどんな行為？',                                   opts:['走者が守備を妨げること','守備側が走者の走塁を妨げること','打者が投手を妨げること','捕手が打者を妨げること'], ans:1},
+      {q:'打撃妨害とはどんな行為？',                                   opts:['守備側が走者の走塁を妨げること','捕手などが打者のスイングを妨げること','投手がボークをすること','走者がフライを落とさせること'], ans:1},
+      {q:'ノーアウト満塁のとき、打者が内野フライを打った。インフィールドフライが宣告された場合、走者はどうなる？', opts:['自動的にアウトになる','フライが落ちたら進塁できる','フライが捕られたら進塁できない','何も変わらない'], ans:1}
+    ]
+  }
+};
+
+// 各テストの選択状態を管理
+var userAns = { field:{}, symbols:{}, rules:{} };
+var marked  = { field:false, symbols:false, rules:false };
+
+// ── テスト初期化（テスト選択時に呼ぶ） ──
+function initQuiz(type) {
+  userAns[type] = {};
+  marked[type]  = false;
+  renderQuiz(type);
+}
+
+// ── 問題HTML生成 ──
+function renderQuiz(type) {
+  var data = QUIZ[type];
+  var container = document.getElementById('qs-' + type);
+  var html = '';
+  data.qs.forEach(function(q, qi) {
+    html += '<div class="card" id="qcard-' + type + '-' + qi + '">';
+    html += '<p style="font-weight:600;margin-bottom:10px;font-size:14px">Q' + (qi+1) + '. ' + q.q + '</p>';
+    html += '<div style="display:grid;gap:6px">';
+    var nums = ['①','②','③','④'];
+    q.opts.forEach(function(opt, oi) {
+      html += '<button onclick="selectAns(\'' + type + '\',' + qi + ',' + oi + ')" ';
+      html += 'id="opt-' + type + '-' + qi + '-' + oi + '" ';
+      html += 'style="display:block;width:100%;text-align:left;padding:13px 14px;border-radius:var(--r);';
+      html += 'border:0.5px solid var(--border);background:var(--surface);font-size:13px;';
+      html += 'font-family:inherit;color:var(--text);cursor:pointer;min-height:48px;line-height:1.4;">';
+      html += nums[oi] + ' ' + opt;
+      html += '</button>';
+    });
+    html += '</div></div>';
+  });
+  container.innerHTML = html;
+  updateProgress(type);
+  updateBtn(type);
+}
+
+// ── 選択肢タップ時 ──
+function selectAns(type, qi, oi) {
+  if (marked[type]) return; // 答え合わせ後は変更不可
+  userAns[type][qi] = oi;
+
+  // そのQ内のボタンをすべてリセット
+  var total = QUIZ[type].qs[qi].opts.length;
+  for (var i = 0; i < total; i++) {
+    var btn = document.getElementById('opt-' + type + '-' + qi + '-' + i);
+    if (btn) {
+      btn.style.background    = 'var(--surface)';
+      btn.style.border        = '0.5px solid var(--border)';
+      btn.style.color         = 'var(--text)';
+      btn.style.fontWeight    = 'normal';
+    }
+  }
+  // 選んだボタンを青くハイライト
+  var sel = document.getElementById('opt-' + type + '-' + qi + '-' + oi);
+  if (sel) {
+    sel.style.background = 'var(--blue-l)';
+    sel.style.border     = '0.5px solid var(--blue)';
+    sel.style.color      = 'var(--blue-d)';
+    sel.style.fontWeight = '600';
+  }
+  updateProgress(type);
+  updateBtn(type);
+}
+
+// ── 回答進捗を更新 ──
+function updateProgress(type) {
+  var total    = QUIZ[type].qs.length;
+  var answered = Object.keys(userAns[type]).length;
+  var el = document.getElementById('prog-' + type);
+  if (el) el.textContent = answered + ' / ' + total + ' 問 回答済み';
+}
+
+// ── 答え合わせボタンの状態更新 ──
+function updateBtn(type) {
+  var total    = QUIZ[type].qs.length;
+  var answered = Object.keys(userAns[type]).length;
+  var btn = document.getElementById('btn-' + type);
+  if (!btn) return;
+  if (answered >= total) {
+    btn.disabled             = false;
+    btn.style.background     = 'var(--green)';
+    btn.style.color          = '#fff';
+    btn.style.cursor         = 'pointer';
+    btn.style.borderColor    = 'var(--green-d)';
+    btn.textContent          = '答え合わせ ✅';
+  } else {
+    btn.disabled             = true;
+    btn.style.background     = 'var(--gray-l)';
+    btn.style.color          = 'var(--gray-d)';
+    btn.style.cursor         = 'not-allowed';
+    btn.style.borderColor    = 'var(--border)';
+    btn.textContent          = '全問回答してから答え合わせ ✅';
+  }
+}
+
+// ── 答え合わせ実行 ──
+function markQuiz(type) {
+  if (marked[type]) return;
+  marked[type] = true;
+
+  var data   = QUIZ[type];
+  var score  = 0;
+  var wrong  = [];
+
+  data.qs.forEach(function(q, qi) {
+    var chosen = userAns[type][qi];
+    var correct = q.ans;
+    var nums    = ['①','②','③','④'];
+    var isOk    = (chosen === correct);
+    if (isOk) { score++; } else { wrong.push(qi + 1); }
+
+    // 全選択肢の色を更新
+    q.opts.forEach(function(opt, oi) {
+      var btn = document.getElementById('opt-' + type + '-' + qi + '-' + oi);
+      if (!btn) return;
+      btn.disabled = true;
+      btn.style.cursor = 'default';
+      if (oi === correct) {
+        // 正解の選択肢を緑
+        btn.style.background  = 'var(--green-l)';
+        btn.style.border      = '0.5px solid var(--green)';
+        btn.style.color       = 'var(--green-dd)';
+        btn.style.fontWeight  = '700';
+        btn.textContent       = nums[oi] + ' ' + opt + ' ✓';
+      } else if (oi === chosen && !isOk) {
+        // 間違えた選択肢を赤
+        btn.style.background  = 'var(--red-l)';
+        btn.style.border      = '0.5px solid var(--red)';
+        btn.style.color       = 'var(--red-d)';
+        btn.style.fontWeight  = '600';
+        btn.textContent       = nums[oi] + ' ' + opt + ' ✗';
+      } else {
+        btn.style.background  = 'var(--surface)';
+        btn.style.border      = '0.5px solid var(--border)';
+        btn.style.color       = 'var(--text2)';
+      }
+    });
+  });
+
+  // 答え合わせボタンを無効化
+  var btn = document.getElementById('btn-' + type);
+  if (btn) {
+    btn.disabled          = true;
+    btn.style.background  = 'var(--gray-l)';
+    btn.style.color       = 'var(--gray-d)';
+    btn.style.cursor      = 'not-allowed';
+    btn.textContent       = '答え合わせ済み';
+  }
+
+  // 結果表示
+  var total  = data.qs.length;
+  var pct    = Math.round(score / total * 100);
+  var emoji  = pct >= 80 ? '🏆' : pct >= 60 ? '⚾' : '📝';
+  var msg    = pct >= 80 ? '素晴らしい！完璧です！' : pct >= 60 ? 'あと少しで満点！' : 'もう一度学習してみましょう';
+  var wrongTxt = wrong.length ? '<div style="margin-top:8px;font-size:12px;background:var(--amber-l);color:var(--amber-d);padding:8px 12px;border-radius:var(--r)">間違えた問題：Q' + wrong.join('・Q') + '</div>' : '';
+
+  var resultEl = document.getElementById('result-' + type);
+  if (resultEl) {
+    resultEl.style.display = 'block';
+    resultEl.innerHTML =
+      '<div class="card" style="text-align:center;padding:20px;margin-top:12px">' +
+      '<div style="font-size:44px;margin-bottom:8px">' + emoji + '</div>' +
+      '<div style="font-size:20px;font-weight:700;margin-bottom:6px">' + score + ' / ' + total + ' 問正解（' + pct + '点）</div>' +
+      '<div style="font-size:13px;color:var(--text2)">' + msg + '</div>' +
+      wrongTxt +
+      '</div>';
+  }
+
+  // 履歴保存
+  try {
+    var h = JSON.parse(localStorage.getItem('sbH') || '[]');
+    h.unshift({ name: data.title, score: score, total: total, pct: pct, date: new Date().toLocaleDateString('ja-JP') });
+    localStorage.setItem('sbH', JSON.stringify(h));
+  } catch(e) {}
+}
+
+// ── リセット（テスト選択に戻るとき） ──
+function resetQuiz(type) {
+  userAns[type] = {};
+  marked[type]  = false;
+  var r = document.getElementById('result-' + type);
+  if (r) r.style.display = 'none';
+  renderQuiz(type);
+}
 
 // 共有テキスト生成・コピー
 document.getElementById('cn').addEventListener('input', updateRep);
